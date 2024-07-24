@@ -337,14 +337,28 @@ public partial class MainForm
     }
 }
 
-public class KlarfData
-{
-    public string WaferID { get; set; }
-    public string FileTimestamp { get; set; }
-    public string InspectionStationID { get; set; }
-    public int SampleSize { get; set; }
-    public string LotID { get; set; }
-    public string DeviceID { get; set; }
-    public string SetupID { get; set; }
-    public string StepID { get
-```​​​​​​​​​​​​​​​​
+   class KlarfData
+    {
+        public string FileTimestamp { get; set; }
+        public string InspectionStationID { get; set; }
+        public int SampleSize { get; set; }
+        public string WaferID { get; set; }
+        public string LotID { get; set; }
+        public string DeviceID { get; set; }
+        public string SetupID { get; set; }
+        public string StepID { get; set; }
+        public string SampleOrientationMarkType { get; set; }
+        public List<string> DefectRecordSpec { get; set; }
+        public List<DefectData> Defects { get; set; } = new List<DefectData>();
+    }
+
+    class DefectData
+    {
+        public float X { get; set; }
+        public float Y { get; set; }
+        public float Size { get; set; }
+        public int ClassNumber { get; set; }
+    }
+}
+```
+
